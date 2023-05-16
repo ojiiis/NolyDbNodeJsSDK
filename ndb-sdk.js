@@ -98,11 +98,12 @@ class ndbSDK {
         return this.sendRequest(url, 'POST', params);
     }
 
-    updateTABLE(db, table, option = {}) {
+    updateTABLE(db, table,set = {}, option = {}) {
         const url = `${this.baseURL}/${this.username}/${db}/update`;
         const params = {
             table,
-            option
+            option,
+			set
         };
 
         return this.sendRequest(url, 'POST', params);
