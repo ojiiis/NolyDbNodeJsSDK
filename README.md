@@ -145,11 +145,6 @@ console.error('Failed to select data:', error);
 });</code></pre>
 
 
-  <h1>Creating an Account</h1>
-  <p>
-To create a new account, use the createAccount method:</p>
-<pre><code></code></pre>
-
 
 
   <p>
