@@ -59,7 +59,8 @@ class ndbSDK {
         return this.sendRequest(url, 'POST', params);
     }
 
-    makeTABLE(db, table, scheme = []) {
+    makeTABLE(db, table, JSscheme = {}) {
+		const scheme = JSON.stringify(JSscheme);
         const url = `${this.baseURL}/${this.username}/${db}/make_table`;
         const params = {
             table,
@@ -69,11 +70,12 @@ class ndbSDK {
         return this.sendRequest(url, 'POST', params);
     }
 
-    addToTABLE(db, table, data = []) {
+    addToTABLE(db, table, JSdata = {}) {
+		const  data = JSON.stringify(JSdata);
         const url = `${this.baseURL}/${this.username}/${db}/add`;
         const params = {
             table,
-            data
+           data
         };
 
         return this.sendRequest(url, 'POST', params);
@@ -88,17 +90,20 @@ class ndbSDK {
         return this.sendRequest(url, 'POST', params);
     }
 
-    selectTABLE(db, table, option = {}) {
+    selectTABLE(db, table, JSoption = {}) {
+		const option =  JSON.stringify(JSoption);
         const url = `${this.baseURL}/${this.username}/${db}/select`;
         const params = {
             table,
-            option
+           option
         };
 
         return this.sendRequest(url, 'POST', params);
     }
 
-    updateTABLE(db, table,set = {}, option = {}) {
+    updateTABLE(db, table,JSset = {}, JSoption = {}) {
+		const  option =  JSON.stringify(JSoption);
+		const set =  JSON.stringify(JSset);
         const url = `${this.baseURL}/${this.username}/${db}/update`;
         const params = {
             table,
@@ -109,7 +114,8 @@ class ndbSDK {
         return this.sendRequest(url, 'POST', params);
     }
 
-    deleteFromTABLE(db, table, option = {}) {
+    deleteFromTABLE(db, table, JSoption = {}) {
+        const  option =  JSON.stringify(JSoption);
         const url = `${this.baseURL}/${this.username}/${db}/delete`;
         const params = {
             table,
