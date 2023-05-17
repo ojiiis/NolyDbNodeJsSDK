@@ -30,16 +30,6 @@ class ndbSDK {
             });
     }
 
-    createAccount(username, email, password) {
-        const url = `${this.baseURL}/create_account`;
-        const params = {
-            username,
-            email,
-            password
-        };
-
-        return this.sendRequest(url, 'POST', params);
-    }
 
     makeDB(database) {
         const url = `${this.baseURL}/${this.username}/make_database`;
