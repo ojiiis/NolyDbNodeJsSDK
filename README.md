@@ -22,24 +22,6 @@ const sdk = new ndbSDK(username, token);
 
   </code>
   </pre>
-  <h1>Creating an Account</h1>
-  <p>
-To create a new account, use the `<b>createAccount</b>` method:</p>
-<pre><code
-const username = 'new-username';
-const email = 'new-email@example.com';
-const password = 'password';
-
-sdk.createAccount(username, email, password)
-  .then(response => {
-    console.log('Account created successfully:', response);
-  })
-  .catch(error => {
-    console.error('Failed to create account:', error);
-  });
-
-></code></pre>
-
 
 
   <h1>Managing Databases
